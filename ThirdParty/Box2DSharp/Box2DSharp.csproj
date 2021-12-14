@@ -1,0 +1,141 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <LangVersion>Latest</LangVersion>
+        <AssemblyName>Box2DSharp</AssemblyName>
+        <RootNamespace>Box2DSharp</RootNamespace>
+        <Version>0.6</Version>
+        <Authors>Zonciu Liang</Authors>
+        <Company>Zonciu Studio</Company>
+        <PackageProjectUrl>https://github.com/Zonciu/Box2DSharp</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Zonciu/Box2DSharp</RepositoryUrl>
+        <Copyright>Copyright © Zonciu Liang 2020</Copyright>
+        <Description>A C# port of Box2D</Description>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <Title>Box2DSharp</Title>
+        <PackageTags>2D;C#;Box2D;Physic</PackageTags>
+        <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <DocumentationFile>$(OutDir)\Box2DSharp.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\AABB.cs" Link="Collision\AABB.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\BroadPhase.cs" Link="Collision\BroadPhase.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\ColliderCircle.cs" Link="Collision\ColliderCircle.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\ColliderEdge.cs" Link="Collision\ColliderEdge.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\ColliderPolygon.cs" Link="Collision\ColliderPolygon.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\Collider\ClipVertex.cs" Link="Collision\Collider\ClipVertex.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\Collider\ContactFeature.cs" Link="Collision\Collider\ContactFeature.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\Collider\ContactID.cs" Link="Collision\Collider\ContactID.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\Collider\Manifold.cs" Link="Collision\Collider\Manifold.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\Collider\ManifoldPoint.cs" Link="Collision\Collider\ManifoldPoint.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\Collider\ManifoldType.cs" Link="Collision\Collider\ManifoldType.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\Collider\PointState.cs" Link="Collision\Collider\PointState.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\Collider\RayCastInput.cs" Link="Collision\Collider\RayCastInput.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\Collider\RayCastOutput.cs" Link="Collision\Collider\RayCastOutput.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\Collider\WorldManifold.cs" Link="Collision\Collider\WorldManifold.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\CollisionUtils.cs" Link="Collision\CollisionUtils.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\DistanceAlgorithm.cs" Link="Collision\DistanceAlgorithm.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\DistanceInput.cs" Link="Collision\DistanceInput.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\DistanceOutput.cs" Link="Collision\DistanceOutput.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\DistanceProxy.cs" Link="Collision\DistanceProxy.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\DynamicTree.cs" Link="Collision\DynamicTree.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\ShapeCastInput.cs" Link="Collision\ShapeCastInput.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\ShapeCastOutput.cs" Link="Collision\ShapeCastOutput.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\Shapes\ChainShape.cs" Link="Collision\Shapes\ChainShape.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\Shapes\CircleShape.cs" Link="Collision\Shapes\CircleShape.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\Shapes\EdgeShape.cs" Link="Collision\Shapes\EdgeShape.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\Shapes\MassData.cs" Link="Collision\Shapes\MassData.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\Shapes\PolygonShape.cs" Link="Collision\Shapes\PolygonShape.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\Shapes\Shape.cs" Link="Collision\Shapes\Shape.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\Shapes\ShapeType.cs" Link="Collision\Shapes\ShapeType.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\Shapes\Sweep.cs" Link="Collision\Shapes\Sweep.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\Simplex.cs" Link="Collision\Simplex.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\SimplexCache.cs" Link="Collision\SimplexCache.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\SimplexVertex.cs" Link="Collision\SimplexVertex.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Collision\TimeOfImpact.cs" Link="Collision\TimeOfImpact.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Common\Color.cs" Link="Common\Color.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Common\Drawer.cs" Link="Common\Drawer.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Common\DrawFlag.cs" Link="Common\DrawFlag.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Common\DumpLogger.cs" Link="Common\DumpLogger.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Common\FixedArray.cs" Link="Common\FixedArray.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Common\MathExtensions.cs" Link="Common\MathExtensions.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Common\MathUtils.cs" Link="Common\MathUtils.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Common\Matrix2x2.cs" Link="Common\Matrix2x2.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Common\Matrix3x3.cs" Link="Common\Matrix3x3.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Common\Rotation.cs" Link="Common\Rotation.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Common\Settings.cs" Link="Common\Settings.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Common\Transform.cs" Link="Common\Transform.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Body.cs" Link="Dynamics\Body.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\BodyFlags.cs" Link="Dynamics\BodyFlags.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Callbacks.cs" Link="Dynamics\Callbacks.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\ContactManager.cs" Link="Dynamics\ContactManager.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Contacts\ChainAndCircleContact.cs" Link="Dynamics\Contacts\ChainAndCircleContact.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Contacts\ChainAndPolygonContact.cs" Link="Dynamics\Contacts\ChainAndPolygonContact.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Contacts\CircleContact.cs" Link="Dynamics\Contacts\CircleContact.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Contacts\Contact.cs" Link="Dynamics\Contacts\Contact.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Contacts\ContactEdge.cs" Link="Dynamics\Contacts\ContactEdge.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Contacts\ContactImpulse.cs" Link="Dynamics\Contacts\ContactImpulse.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Contacts\ContactPool.cs" Link="Dynamics\Contacts\ContactPool.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Contacts\ContactPositionConstraint.cs" Link="Dynamics\Contacts\ContactPositionConstraint.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Contacts\ContactSolver.cs" Link="Dynamics\Contacts\ContactSolver.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Contacts\ContactSolverDef.cs" Link="Dynamics\Contacts\ContactSolverDef.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Contacts\ContactVelocityConstraint.cs" Link="Dynamics\Contacts\ContactVelocityConstraint.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Contacts\EdgeAndCircleContact.cs" Link="Dynamics\Contacts\EdgeAndCircleContact.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Contacts\EdgeAndPolygonContact.cs" Link="Dynamics\Contacts\EdgeAndPolygonContact.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Contacts\IContactFactory.cs" Link="Dynamics\Contacts\IContactFactory.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Contacts\PolygonAndCircleContact.cs" Link="Dynamics\Contacts\PolygonAndCircleContact.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Contacts\PolygonContact.cs" Link="Dynamics\Contacts\PolygonContact.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Contacts\PositionSolverManifold.cs" Link="Dynamics\Contacts\PositionSolverManifold.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Contacts\VelocityConstraintPoint.cs" Link="Dynamics\Contacts\VelocityConstraintPoint.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\DefaultContactFilter.cs" Link="Dynamics\DefaultContactFilter.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Fixture.cs" Link="Dynamics\Fixture.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\IContactFilter.cs" Link="Dynamics\IContactFilter.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\IContactListener.cs" Link="Dynamics\IContactListener.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\IDestructionListener.cs" Link="Dynamics\IDestructionListener.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Island.cs" Link="Dynamics\Island.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Joints\DistanceJoint.cs" Link="Dynamics\Joints\DistanceJoint.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Joints\DistanceJointDef.cs" Link="Dynamics\Joints\DistanceJointDef.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Joints\FrictionJoint.cs" Link="Dynamics\Joints\FrictionJoint.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Joints\FrictionJointDef.cs" Link="Dynamics\Joints\FrictionJointDef.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Joints\GearJoint.cs" Link="Dynamics\Joints\GearJoint.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Joints\GearJointDef.cs" Link="Dynamics\Joints\GearJointDef.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Joints\Joints.cs" Link="Dynamics\Joints\Joints.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Joints\MotorJoint.cs" Link="Dynamics\Joints\MotorJoint.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Joints\MotorJointDef.cs" Link="Dynamics\Joints\MotorJointDef.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Joints\MouseJoint.cs" Link="Dynamics\Joints\MouseJoint.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Joints\MouseJointDef.cs" Link="Dynamics\Joints\MouseJointDef.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Joints\PrismaticJoint.cs" Link="Dynamics\Joints\PrismaticJoint.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Joints\PrismaticJointDef.cs" Link="Dynamics\Joints\PrismaticJointDef.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Joints\PulleyJoint.cs" Link="Dynamics\Joints\PulleyJoint.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Joints\PulleyJointDef.cs" Link="Dynamics\Joints\PulleyJointDef.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Joints\RevoluteJoint.cs" Link="Dynamics\Joints\RevoluteJoint.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Joints\RevoluteJointDef.cs" Link="Dynamics\Joints\RevoluteJointDef.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Joints\WeldJoint.cs" Link="Dynamics\Joints\WeldJoint.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Joints\WeldJointDef.cs" Link="Dynamics\Joints\WeldJointDef.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Joints\WheelJoint.cs" Link="Dynamics\Joints\WheelJoint.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Joints\WheelJointDef.cs" Link="Dynamics\Joints\WheelJointDef.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Position.cs" Link="Dynamics\Position.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Profile.cs" Link="Dynamics\Profile.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\SolverData.cs" Link="Dynamics\SolverData.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\TimeStep.cs" Link="Dynamics\TimeStep.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\Velocity.cs" Link="Dynamics\Velocity.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Dynamics\World.cs" Link="Dynamics\World.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Ropes\BendingModel.cs" Link="Ropes\BendingModel.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Ropes\Rope.cs" Link="Ropes\Rope.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Ropes\RopeBend.cs" Link="Ropes\RopeBend.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Ropes\RopeDef.cs" Link="Ropes\RopeDef.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Ropes\RopeJointDef.cs" Link="Ropes\RopeJointDef.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Ropes\RopeStretch.cs" Link="Ropes\RopeStretch.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Ropes\RopeTuning.cs" Link="Ropes\RopeTuning.cs" />
+        <Compile Include="..\..\Unity\Assets\ThirdParty\Box2DSharp\Ropes\StretchingModel.cs" Link="Ropes\StretchingModel.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="System.Memory" Version="4.5.4" />
+        <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
+    </ItemGroup>
+
+</Project>

@@ -1,46 +1,72 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>ET</RootNamespace>
-    <LangVersion>8</LangVersion>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>TRACE2_0;NOT_UNITY;SERVER;</DefineConstants>
-    <OutputPath>..\..\Bin\</OutputPath>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>TRACE2_0;SERVER;NOT_UNITY</DefineConstants>
-    <OutputPath>..\..\Bin\</OutputPath>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="..\..\Unity\Codes\Hotfix\Demo\Move\MoveComponentSystem.cs">
-      <Link>Demo\Move\MoveComponentSystem.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Unity\Codes\Hotfix\Module\Config\ConfigComponentSystem.cs">
-      <Link>Module\Config\ConfigComponentSystem.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Unity\Codes\Hotfix\Module\Numeric\NumericChangeEvent_NotifyWatcher.cs">
-      <Link>Module\Numeric\NumericChangeEvent_NotifyWatcher.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Unity\Codes\Hotfix\Module\Numeric\NumericWatcher_Hp_ShowUI.cs">
-      <Link>Module\Numeric\NumericWatcher_Hp_ShowUI.cs</Link>
-    </Compile>
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <RootNamespace>ET</RootNamespace>
+        <LangVersion>Latest</LangVersion>
+    </PropertyGroup>
+    <PropertyGroup>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <DefineConstants>TRACE2_0;NOT_UNITY;SERVER;</DefineConstants>
+        <OutputPath>..\..\Bin\</OutputPath>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <DefineConstants>TRACE2_0;SERVER;NOT_UNITY</DefineConstants>
+        <OutputPath>..\..\Bin\</OutputPath>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="..\..\Unity\Codes\Hotfix\Module\Config\ConfigComponentSystem.cs">
+            <Link>Module\Config\ConfigComponentSystem.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Hotfix\Module\Numeric\NumericChangeEvent_NotifyWatcher.cs">
+            <Link>Module\Numeric\NumericChangeEvent_NotifyWatcher.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Hotfix\Module\Numeric\NumericWatcher_Hp_ShowUI.cs">
+            <Link>Module\Numeric\NumericWatcher_Hp_ShowUI.cs</Link>
+        </Compile>
 
-    <Compile Include="..\..\Unity\Codes\Hotfix\Module\AI\**\*.cs">
-      <Link>Module\AI\%(RecursiveDir)%(FileName)%(Extension)</Link>
-    </Compile>
+        <Compile Include="..\..\Unity\Codes\Hotfix\Module\AI\**\*.cs">
+            <Link>Module\AI\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
 
-    <Compile Include="..\..\Unity\Codes\Hotfix\Module\Message\**\*.cs">
-      <Link>Module\Message\%(RecursiveDir)%(FileName)%(Extension)</Link>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Model\Server.Model.csproj" />
-  </ItemGroup>
+        <Compile Include="..\..\Unity\Codes\Hotfix\Module\Message\**\*.cs">
+            <Link>Module\Message\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Model\Server.Model.csproj" />
+    </ItemGroup>
+
+    <!--My My My!-->
+    <ItemGroup>
+        <Compile Include="..\..\Unity\Codes\Hotfix\Starsmiao\Helper\IdHelper.cs" Link="Starsmiao\Helper\IdHelper.cs" />
+        <Compile Include="..\..\Unity\Codes\Hotfix\Starsmiao\Helper\PositionHelper.cs" Link="Starsmiao\Helper\PositionHelper.cs" />
+        <Compile Include="..\..\Unity\Codes\Hotfix\Starsmiao\Fight\System\AimSystem.cs" Link="Starsmiao\Fight\System\AimSystem.cs" />
+        <Compile Include="..\..\Unity\Codes\Hotfix\Starsmiao\Fight\System\BulletSystem.cs" Link="Starsmiao\Fight\System\BulletSystem.cs" />
+        <Compile Include="..\..\Unity\Codes\Hotfix\Starsmiao\Fight\System\MapSystem.cs" Link="Starsmiao\Fight\System\MapSystem.cs" />
+        <Compile Include="..\..\Unity\Codes\Hotfix\Starsmiao\Fight\System\MoveSystem.cs" Link="Starsmiao\Fight\System\MoveSystem.cs" />
+        <Compile Include="..\..\Unity\Codes\Hotfix\Starsmiao\Fight\System\ShootSystem.cs" Link="Starsmiao\Fight\System\ShootSystem.cs" />
+        <Compile Include="..\..\Unity\Codes\Hotfix\Starsmiao\Factory\BulletFactory.cs" Link="Starsmiao\Factory\BulletFactory.cs" />
+
+        <Compile Include="..\..\Unity\Codes\Hotfix\Starsmiao\Fight\Event\**\*.cs">
+            <Link>Starsmiao\Fight\Event\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Codes\Hotfix\Starsmiao\Fight\Box2D\System\**\*.cs">
+            <Link>Starsmiao\Fight\Box2D\System\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Codes\Hotfix\Starsmiao\Fight\Box2D\Utility\**\*.cs">
+            <Link>Starsmiao\Fight\Box2D\Utility\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Handler\" />
+    </ItemGroup>
+    <!--My My My!-->
+
 </Project>

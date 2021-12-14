@@ -9,6 +9,8 @@
 		Http = 4,
 		Location = 5,
 		Map = 6,
+		Match = 7,
+		DB = 8,
 
 		// 客户端Model层
 		Client = 30,

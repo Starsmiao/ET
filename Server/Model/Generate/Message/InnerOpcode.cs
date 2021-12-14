@@ -25,5 +25,32 @@ namespace ET
 		 public const ushort G2M_CreateUnit = 10021;
 		 public const ushort M2G_CreateUnit = 10022;
 		 public const ushort G2M_SessionDisconnect = 10023;
+		 public const ushort M2G_SessionDisconnect = 10024;
+		 public const ushort G2R_KickOutPlayer = 10025;
+		 public const ushort R2G_KickOutPlayer = 10026;
+		 public const ushort G2G_KickOutPlayerRequest = 10027;
+		 public const ushort G2G_KickOutPlayerResponse = 10028;
+		 public const ushort G2R_PlayerOnline = 10029;
+		 public const ushort R2G_PlayerOnline = 10030;
+		 public const ushort G2R_PlayerOffline = 10031;
+		 public const ushort R2G_PlayerOffline = 10032;
+		 public const ushort G2D_QueryPlayerInfo = 10033;
+		 public const ushort D2G_QueryPlayerInfo = 10034;
+		 public const ushort R2D_Login = 10035;
+		 public const ushort R2D_Regist = 10036;
+		 public const ushort G2M_PlayerEnterMatch = 10037;
+		 public const ushort G2M_PlayerExitMatch = 10038;
+		 public const ushort M2G_PlayerExitMatch = 10039;
+		 public const ushort G2C_PlayerExitMatch = 10040;
+		 public const ushort G2M_PlayerCancelMatch = 10041;
+		 public const ushort MH2MP_CreateRoom = 10042;
+		 public const ushort MP2MH_CreateRoom = 10043;
+		 public const ushort MP2MH_PlayerExitRoom = 10044;
+		 public const ushort MP2MH_SyncRoomState = 10045;
+		 public const ushort MH2MP_PlayerEnterRoom = 10046;
+		 public const ushort G2M_PlayerExitRoom = 10047;
+		 public const ushort M2G_PlayerExitRoom = 10048;
+		 public const ushort M2G_MatchSucess = 10049;
+		 public const ushort G2M_PUBG = 10050;
 	}
 }

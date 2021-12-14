@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
@@ -13,29 +13,29 @@
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <OutputPath>../../Bin/</OutputPath>
-      <DefineConstants>TRACECOREAPP;NOT_UNITY</DefineConstants>
+        <OutputPath>../../Bin/</OutputPath>
+        <DefineConstants>TRACECOREAPP;NOT_UNITY</DefineConstants>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <OutputPath>../../Bin/</OutputPath>
-      <DefineConstants>TRACECOREAPP;NOT_UNITY</DefineConstants>
+        <OutputPath>../../Bin/</OutputPath>
+        <DefineConstants>TRACECOREAPP;NOT_UNITY</DefineConstants>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Model\Robot.Model.csproj" />
+        <ProjectReference Include="..\Model\Robot.Model.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <None Include="..\..\Server\App\NLog.config">
-        <Link>NLog.config</Link>
-      </None>
+        <None Include="..\..\Server\App\NLog.config">
+            <Link>NLog.config</Link>
+        </None>
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="..\..\Server\App\NLog.xsd">
-        <Link>NLog.xsd</Link>
-      </Content>
+        <Content Include="..\..\Server\App\NLog.xsd">
+            <Link>NLog.xsd</Link>
+        </Content>
     </ItemGroup>
 
 </Project>

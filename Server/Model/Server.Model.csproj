@@ -1,111 +1,141 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>ET</RootNamespace>
-    <LangVersion>8</LangVersion>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>TRACE2_0;NOT_UNITY;SERVER</DefineConstants>
-    <OutputPath>..\..\Bin\</OutputPath>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>TRACE2_0;SERVER;NOT_UNITY</DefineConstants>
-    <OutputPath>..\..\Bin\</OutputPath>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-  </PropertyGroup>
-  <ItemGroup>
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <RootNamespace>ET</RootNamespace>
+        <LangVersion>Latest</LangVersion>
+    </PropertyGroup>
+    <PropertyGroup>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <DefineConstants>TRACE2_0;NOT_UNITY;SERVER</DefineConstants>
+        <OutputPath>..\..\Bin\</OutputPath>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <DefineConstants>TRACE2_0;SERVER;NOT_UNITY</DefineConstants>
+        <OutputPath>..\..\Bin\</OutputPath>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    </PropertyGroup>
+    <ItemGroup>
 
-    <Compile Include="..\..\Unity\Codes\Model\Core\**\*.cs"> 
-      <Link>Core\%(RecursiveDir)%(FileName)%(Extension)</Link>
-    </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Core\**\*.cs">
+            <Link>Core\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
 
-    <Compile Include="..\..\Unity\Codes\Model\Demo\SessionStreamDispatcherType.cs">
-      <Link>Demo\SessionStreamDispatcherType.cs</Link>
-    </Compile>
+        <Compile Include="..\..\Unity\Assets\Mono\Core\**\*.cs">
+            <Link>Core\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
 
-    <Compile Include="..\..\Unity\Assets\Mono\Core\**\*.cs">
-      <Link>Core\%(RecursiveDir)%(FileName)%(Extension)</Link>
-    </Compile>
-    
+        <Compile Include="..\..\Unity\Codes\Model\Module\Config\**\*.cs">
+            <Link>Module\Config\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
 
-    <Compile Include="..\..\Unity\Codes\Model\Demo\Move\MoveComponent.cs">
-      <Link>Demo\Move\MoveComponent.cs</Link>
-    </Compile>
-    
+        <Compile Include="..\..\Unity\Codes\Model\Module\AI\**\*.cs">
+            <Link>Module\AI\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
 
-    <Compile Include="..\..\Unity\Codes\Model\Demo\TimerType.cs">
-      <Link>Demo\TimerType.cs</Link>
-    </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\CoroutineLock\**\*.cs">
+            <Link>Module\CoroutineLock\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
 
-    <Compile Include="..\..\Unity\Codes\Model\Module\Config\**\*.cs">
-      <Link>Module\Config\%(RecursiveDir)%(FileName)%(Extension)</Link>
-    </Compile>
+        <Compile Remove="Libs\**" />
 
-    <Compile Include="..\..\Unity\Codes\Model\Module\AI\**\*.cs">
-      <Link>Module\AI\%(RecursiveDir)%(FileName)%(Extension)</Link>
-    </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\ActorLocation\ActorResponse.cs">
+            <Link>Module\ActorLocation\ActorResponse.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\ActorLocation\IActorLocationMessage.cs">
+            <Link>Module\ActorLocation\IActorLocationMessage.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\Actor\IActorMessage.cs">
+            <Link>Module\Actor\IActorMessage.cs</Link>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="..\..\Unity\Assets\Mono\Module\NetworkTCP\**\*.cs">
+            <Link>Module\NetworkTCP\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\Numeric\INumericWatcher.cs">
+            <Link>Module\Numeric\INumericWatcher.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\Numeric\NumericComponent.cs">
+            <Link>Module\Numeric\NumericComponent.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\Numeric\NumericType.cs">
+            <Link>Module\Numeric\NumericType.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\Numeric\NumericWatcherAttribute.cs">
+            <Link>Module\Numeric\NumericWatcherAttribute.cs</Link>
+        </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\Numeric\NumericWatcherComponent.cs">
+            <Link>Module\Numeric\NumericWatcherComponent.cs</Link>
+        </Compile>
+    </ItemGroup>
 
-    <Compile Include="..\..\Unity\Codes\Model\Module\CoroutineLock\**\*.cs">
-      <Link>Module\CoroutineLock\%(RecursiveDir)%(FileName)%(Extension)</Link>
-    </Compile>
-    
-    <Compile Remove="Libs\**" />
-    
-    <Compile Include="..\..\Unity\Codes\Model\Module\ActorLocation\ActorResponse.cs">
-      <Link>Module\ActorLocation\ActorResponse.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Unity\Codes\Model\Module\ActorLocation\IActorLocationMessage.cs">
-      <Link>Module\ActorLocation\IActorLocationMessage.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Unity\Codes\Model\Module\Actor\IActorMessage.cs">
-      <Link>Module\Actor\IActorMessage.cs</Link>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="..\..\Unity\Assets\Mono\Module\NetworkTCP\**\*.cs">
-      <Link>Module\NetworkTCP\%(RecursiveDir)%(FileName)%(Extension)</Link>
-    </Compile>
-    <Compile Include="..\..\Unity\Codes\Model\Module\Numeric\INumericWatcher.cs">
-      <Link>Module\Numeric\INumericWatcher.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Unity\Codes\Model\Module\Numeric\NumericComponent.cs">
-      <Link>Module\Numeric\NumericComponent.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Unity\Codes\Model\Module\Numeric\NumericType.cs">
-      <Link>Module\Numeric\NumericType.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Unity\Codes\Model\Module\Numeric\NumericWatcherAttribute.cs">
-      <Link>Module\Numeric\NumericWatcherAttribute.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Unity\Codes\Model\Module\Numeric\NumericWatcherComponent.cs">
-      <Link>Module\Numeric\NumericWatcherComponent.cs</Link>
-    </Compile>
-  </ItemGroup>
+    <ItemGroup>
 
-  <ItemGroup>
+        <Compile Include="..\..\Unity\Assets\Mono\Module\Network\**\*.cs">
+            <Link>Module\Network\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
 
-    <Compile Include="..\..\Unity\Assets\Mono\Module\Network\**\*.cs">
-      <Link>Module\Network\%(RecursiveDir)%(FileName)%(Extension)</Link>
-    </Compile>
+        <Compile Include="..\..\Unity\Codes\Model\Module\Message\**\*.cs">
+            <Link>Module\Message\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
 
-    <Compile Include="..\..\Unity\Codes\Model\Module\Message\**\*.cs">
-      <Link>Module\Message\%(RecursiveDir)%(FileName)%(Extension)</Link>
-    </Compile>
+        <Compile Include="..\..\Unity\Assets\Mono\Module\Message\**\*.cs">
+            <Link>Module\Message\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\ThirdParty\ShareLib\ShareLib.csproj" />
+        <ProjectReference Include="..\..\ThirdParty\UnityEngine\UnityEngine.csproj" />
+    </ItemGroup>
 
-    <Compile Include="..\..\Unity\Assets\Mono\Module\Message\**\*.cs">
-      <Link>Module\Message\%(RecursiveDir)%(FileName)%(Extension)</Link>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\ThirdParty\ETTask\ETTask.csproj" />
-    <ProjectReference Include="..\..\ThirdParty\ShareLib\ShareLib.csproj" />
-    <ProjectReference Include="..\..\ThirdParty\UnityEngine\UnityEngine.csproj" />
-  </ItemGroup>
+    <!--My My My!-->
+    <ItemGroup>
+        <Compile Include="..\..\Unity\Codes\Model\Starsmiao\Define\TimerType.cs" Link="Starsmiao\Define\TimerType.cs" />
+        <Compile Include="..\..\Unity\Codes\Model\Starsmiao\Define\SessionStreamDispatcherType.cs" Link="Starsmiao\Define\SessionStreamDispatcherType.cs" />
+
+        <Compile Include="..\..\Unity\Codes\Model\Starsmiao\Fight\Box2D\Utility\Box2D_ConstUtility.cs" Link="Starsmiao\Fight\Box2D\Utility\Box2D_ConstUtility.cs" />
+        <Compile Include="..\..\Unity\Codes\Model\Starsmiao\Fight\Component\AimComponent.cs" Link="Starsmiao\Fight\Component\Map\AimComponent.cs" />
+        <Compile Include="..\..\Unity\Codes\Model\Starsmiao\Fight\Component\BulletComponent.cs" Link="Starsmiao\Fight\Component\Map\BulletComponent.cs" />
+        <Compile Include="..\..\Unity\Codes\Model\Starsmiao\Fight\Component\MoveComponent.cs" Link="Starsmiao\Fight\Component\Map\MoveComponent.cs" />
+        <Compile Include="..\..\Unity\Codes\Model\Starsmiao\Fight\Component\ShootComponent.cs" Link="Starsmiao\Fight\Component\Map\ShootComponent.cs" />
+        <Compile Include="..\..\Unity\Codes\Model\Starsmiao\Component\RoomComponent.cs" Link="Starsmiao\Component\Map\RoomComponent.cs" />
+        <Compile Include="..\..\Unity\Codes\Model\Starsmiao\Define\Box2DDefine.cs" Link="Starsmiao\Define\Box2DDefine.cs" />
+        <Compile Include="..\..\Unity\Codes\Model\Starsmiao\Define\EventType.cs" Link="Starsmiao\Define\EventType.cs" />
+        <Compile Include="..\..\Unity\Codes\Model\Starsmiao\Define\FightDefine.cs" Link="Starsmiao\Define\FightDefine.cs" />
+        <Compile Include="..\..\Unity\Codes\Model\Starsmiao\Define\MapDefine.cs" Link="Starsmiao\Define\MapDefine.cs" />
+        <Compile Include="..\..\Unity\Codes\Model\Starsmiao\Define\WaitType.cs" Link="Starsmiao\Define\WaitType.cs" />
+        <Compile Include="..\..\Unity\Codes\Model\Starsmiao\Define\WeaponDefine.cs" Link="Starsmiao\Define\WeaponDefine.cs" />
+        <Compile Include="..\..\Unity\Codes\Model\Starsmiao\Entity\Bullet.cs" Link="Starsmiao\Entity\Bullet.cs" />
+        <Compile Include="..\..\Unity\Codes\Model\Starsmiao\Entity\Map.cs" Link="Starsmiao\Entity\Map.cs" />
+        <Compile Include="..\..\Unity\Codes\Model\Starsmiao\Entity\AccountInfo.cs" Link="Starsmiao\Entity\AccountInfo.cs" />
+        <Compile Include="..\..\Unity\Codes\Model\Starsmiao\Entity\PlayerInfo.cs" Link="Starsmiao\Entity\PlayerInfo.cs" />
+
+        <Compile Include="..\..\Unity\Assets\Mono\Helper\MongoHelper.cs" Link="Base\MongoHelper.cs" />
+        <Compile Include="..\..\Unity\Assets\Mono\Helper\MongoRegister.cs" Link="Base\MongoRegister.cs" />
+        <Compile Include="..\..\Unity\Assets\Mono\Helper\StructBsonSerialize.cs" Link="Base\StructBsonSerialize.cs" />
+
+        <Compile Include="..\..\Unity\Codes\Model\Starsmiao\Fight\Box2D\Component\**\*.cs">
+            <Link>Starsmiao\Fight\Box2D\Component\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Assets\Mono\Starsmiao\Fight\Box2D\DataStructure\**\*.cs">
+            <Link>Starsmiao\Fight\Box2D\DataStructure\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+
+        <Compile Include="..\..\Unity\Codes\Model\Starsmiao\Fight\Box2D\RayCastCallback\**\*.cs">
+            <Link>Starsmiao\Fight\Box2D\RayCastCallback\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\ThirdParty\Box2DSharp\Box2DSharp.csproj" />
+    </ItemGroup>
+    <!--My My My!-->
+
 </Project>

@@ -295,27 +295,41 @@ namespace ET
                 sb.Append("},\n");
             }
         }
-        
+
         private static string Convert(string type, string value)
         {
             switch (type)
             {
                 case "int[]":
+                    if (value == "") return "[0]";
+                    else return $"[{value}]";
                 case "int32[]":
+                    if (value == "") return "[0]";
+                    else return $"[{value}]";
                 case "long[]":
-                    return $"[{value}]";
+                    if (value == "") return "[0]";
+                    else return $"[{value}]";
                 case "string[]":
                     return $"[{value}]";
                 case "int":
+                    if (value == "") return "0";
+                    else return value;
                 case "int32":
+                    if (value == "") return "0";
+                    else return value;
                 case "int64":
+                    if (value == "") return "0";
+                    else return value;
                 case "long":
+                    if (value == "") return "0";
+                    else return value;
                 case "float":
+                    if (value == "") return "0";
+                    else return value;
                 case "double":
-                    if (value == "")
-                    {
-                        return "0";
-                    }
+                    if (value == "") return "0";
+                    else return value;
+                case "bool":
                     return value;
                 case "string":
                     return $"\"{value}\"";
@@ -323,7 +337,7 @@ namespace ET
                     throw new Exception($"不支持此类型: {type}");
             }
         }
-#endregion
+        #endregion
 
         // 根据生成的类，动态编译把json转成protobuf
         private static void ExportExcelProtobuf(ConfigType configType)

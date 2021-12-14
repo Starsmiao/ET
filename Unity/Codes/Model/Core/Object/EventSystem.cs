@@ -8,7 +8,7 @@ namespace ET
 {
     using OneTypeSystems = UnOrderMultiMap<Type, object>;
 
-    public sealed class EventSystem: IDisposable
+    public sealed class EventSystem : IDisposable
     {
         private class TypeSystems
         {
@@ -85,6 +85,12 @@ namespace ET
         private Queue<long> loaders = new Queue<long>();
         private Queue<long> loaders2 = new Queue<long>();
 
+        private Queue<long> fixedUpdateHighs = new Queue<long>();
+        private Queue<long> fixedUpdateHighs2 = new Queue<long>();
+
+        private Queue<long> fixedUpdateLows = new Queue<long>();
+        private Queue<long> fixedUpdateLows2 = new Queue<long>();
+
         private Queue<long> lateUpdates = new Queue<long>();
         private Queue<long> lateUpdates2 = new Queue<long>();
 
@@ -102,7 +108,7 @@ namespace ET
                     continue;
                 }
 
-                if (type.IsSubclassOf(typeof (BaseAttribute)))
+                if (type.IsSubclassOf(typeof(BaseAttribute)))
                 {
                     attributeTypes.Add(type);
                 }
@@ -142,7 +148,7 @@ namespace ET
 
             this.typeSystems = new TypeSystems();
 
-            foreach (Type type in this.GetTypes(typeof (ObjectSystemAttribute)))
+            foreach (Type type in this.GetTypes(typeof(ObjectSystemAttribute)))
             {
                 object obj = Activator.CreateInstance(type);
 
@@ -154,7 +160,7 @@ namespace ET
             }
 
             this.allEvents.Clear();
-            foreach (Type type in types[typeof (EventAttribute)])
+            foreach (Type type in types[typeof(EventAttribute)])
             {
                 IEvent obj = Activator.CreateInstance(type) as IEvent;
                 if (obj == null)
@@ -224,17 +230,27 @@ namespace ET
                 return;
             }
 
-            if (oneTypeSystems.ContainsKey(typeof (ILoadSystem)))
+            if (oneTypeSystems.ContainsKey(typeof(ILoadSystem)))
             {
                 this.loaders.Enqueue(component.InstanceId);
             }
 
-            if (oneTypeSystems.ContainsKey(typeof (IUpdateSystem)))
+            if (oneTypeSystems.ContainsKey(typeof(IUpdateSystem)))
             {
                 this.updates.Enqueue(component.InstanceId);
             }
 
-            if (oneTypeSystems.ContainsKey(typeof (ILateUpdateSystem)))
+            if (oneTypeSystems.ContainsKey(typeof(IFixedUpdateHighSystem)))
+            {
+                this.fixedUpdateHighs.Enqueue(component.InstanceId);
+            }
+
+            if (oneTypeSystems.ContainsKey(typeof(IFixedUpdateLowSystem)))
+            {
+                this.fixedUpdateLows.Enqueue(component.InstanceId);
+            }
+
+            if (oneTypeSystems.ContainsKey(typeof(ILateUpdateSystem)))
             {
                 this.lateUpdates.Enqueue(component.InstanceId);
             }
@@ -259,7 +275,7 @@ namespace ET
 
         public void Deserialize(Entity component)
         {
-            List<object> iDeserializeSystems = this.typeSystems.GetSystems(component.GetType(), typeof (IDeserializeSystem));
+            List<object> iDeserializeSystems = this.typeSystems.GetSystems(component.GetType(), typeof(IDeserializeSystem));
             if (iDeserializeSystems == null)
             {
                 return;
@@ -285,7 +301,7 @@ namespace ET
 
         public void Awake(Entity component)
         {
-            List<object> iAwakeSystems = this.typeSystems.GetSystems(component.GetType(), typeof (IAwakeSystem));
+            List<object> iAwakeSystems = this.typeSystems.GetSystems(component.GetType(), typeof(IAwakeSystem));
             if (iAwakeSystems == null)
             {
                 return;
@@ -311,7 +327,7 @@ namespace ET
 
         public void Awake<P1>(Entity component, P1 p1)
         {
-            List<object> iAwakeSystems = this.typeSystems.GetSystems(component.GetType(), typeof (IAwakeSystem<P1>));
+            List<object> iAwakeSystems = this.typeSystems.GetSystems(component.GetType(), typeof(IAwakeSystem<P1>));
             if (iAwakeSystems == null)
             {
                 return;
@@ -337,7 +353,7 @@ namespace ET
 
         public void Awake<P1, P2>(Entity component, P1 p1, P2 p2)
         {
-            List<object> iAwakeSystems = this.typeSystems.GetSystems(component.GetType(), typeof (IAwakeSystem<P1, P2>));
+            List<object> iAwakeSystems = this.typeSystems.GetSystems(component.GetType(), typeof(IAwakeSystem<P1, P2>));
             if (iAwakeSystems == null)
             {
                 return;
@@ -363,7 +379,7 @@ namespace ET
 
         public void Awake<P1, P2, P3>(Entity component, P1 p1, P2 p2, P3 p3)
         {
-            List<object> iAwakeSystems = this.typeSystems.GetSystems(component.GetType(), typeof (IAwakeSystem<P1, P2, P3>));
+            List<object> iAwakeSystems = this.typeSystems.GetSystems(component.GetType(), typeof(IAwakeSystem<P1, P2, P3>));
             if (iAwakeSystems == null)
             {
                 return;
@@ -389,7 +405,7 @@ namespace ET
 
         public void Awake<P1, P2, P3, P4>(Entity component, P1 p1, P2 p2, P3 p3, P4 p4)
         {
-            List<object> iAwakeSystems = this.typeSystems.GetSystems(component.GetType(), typeof (IAwakeSystem<P1, P2, P3, P4>));
+            List<object> iAwakeSystems = this.typeSystems.GetSystems(component.GetType(), typeof(IAwakeSystem<P1, P2, P3, P4>));
             if (iAwakeSystems == null)
             {
                 return;
@@ -429,7 +445,7 @@ namespace ET
                     continue;
                 }
 
-                List<object> iLoadSystems = this.typeSystems.GetSystems(component.GetType(), typeof (ILoadSystem));
+                List<object> iLoadSystems = this.typeSystems.GetSystems(component.GetType(), typeof(ILoadSystem));
                 if (iLoadSystems == null)
                 {
                     continue;
@@ -455,7 +471,7 @@ namespace ET
 
         public void Destroy(Entity component)
         {
-            List<object> iDestroySystems = this.typeSystems.GetSystems(component.GetType(), typeof (IDestroySystem));
+            List<object> iDestroySystems = this.typeSystems.GetSystems(component.GetType(), typeof(IDestroySystem));
             if (iDestroySystems == null)
             {
                 return;
@@ -495,7 +511,7 @@ namespace ET
                     continue;
                 }
 
-                List<object> iUpdateSystems = this.typeSystems.GetSystems(component.GetType(), typeof (IUpdateSystem));
+                List<object> iUpdateSystems = this.typeSystems.GetSystems(component.GetType(), typeof(IUpdateSystem));
                 if (iUpdateSystems == null)
                 {
                     continue;
@@ -519,6 +535,84 @@ namespace ET
             ObjectHelper.Swap(ref this.updates, ref this.updates2);
         }
 
+        public void FixedUpdateHigh()
+        {
+            while (this.fixedUpdateHighs.Count > 0)
+            {
+                long instanceId = this.fixedUpdateHighs.Dequeue();
+                if (!this.allEntities.TryGetValue(instanceId, out Entity component))
+                {
+                    continue;
+                }
+
+                if (component.IsDisposed)
+                {
+                    continue;
+                }
+
+                List<object> iFixedUpdateHighSystems = this.typeSystems.GetSystems(component.GetType(), typeof(IFixedUpdateHighSystem));
+                if (iFixedUpdateHighSystems == null)
+                {
+                    continue;
+                }
+
+                this.fixedUpdateHighs2.Enqueue(instanceId);
+
+                foreach (IFixedUpdateHighSystem ifixedUpdateHighSystem in iFixedUpdateHighSystems)
+                {
+                    try
+                    {
+                        ifixedUpdateHighSystem.Run(component);
+                    }
+                    catch (Exception e)
+                    {
+                        Log.Error(e);
+                    }
+                }
+            }
+
+            ObjectHelper.Swap(ref this.fixedUpdateHighs, ref this.fixedUpdateHighs2);
+        }
+
+        public void FixedUpdateLow()
+        {
+            while (this.fixedUpdateLows.Count > 0)
+            {
+                long instanceId = this.fixedUpdateLows.Dequeue();
+                if (!this.allEntities.TryGetValue(instanceId, out Entity component))
+                {
+                    continue;
+                }
+
+                if (component.IsDisposed)
+                {
+                    continue;
+                }
+
+                List<object> iFixedUpdateLowSystems = this.typeSystems.GetSystems(component.GetType(), typeof(IFixedUpdateLowSystem));
+                if (iFixedUpdateLowSystems == null)
+                {
+                    continue;
+                }
+
+                this.fixedUpdateLows2.Enqueue(instanceId);
+
+                foreach (IFixedUpdateLowSystem ifixedUpdateLowSystem in iFixedUpdateLowSystems)
+                {
+                    try
+                    {
+                        ifixedUpdateLowSystem.Run(component);
+                    }
+                    catch (Exception e)
+                    {
+                        Log.Error(e);
+                    }
+                }
+            }
+
+            ObjectHelper.Swap(ref this.fixedUpdateLows, ref this.fixedUpdateLows2);
+        }
+
         public void LateUpdate()
         {
             while (this.lateUpdates.Count > 0)
@@ -535,7 +629,7 @@ namespace ET
                     continue;
                 }
 
-                List<object> iLateUpdateSystems = this.typeSystems.GetSystems(component.GetType(), typeof (ILateUpdateSystem));
+                List<object> iLateUpdateSystems = this.typeSystems.GetSystems(component.GetType(), typeof(ILateUpdateSystem));
                 if (iLateUpdateSystems == null)
                 {
                     continue;
@@ -562,7 +656,7 @@ namespace ET
         public async ETTask Publish<T>(T a) where T : struct
         {
             List<object> iEvents;
-            if (!this.allEvents.TryGetValue(typeof (T), out iEvents))
+            if (!this.allEvents.TryGetValue(typeof(T), out iEvents))
             {
                 return;
             }

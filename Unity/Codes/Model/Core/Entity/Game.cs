@@ -7,6 +7,9 @@ namespace ET
     {
         public static ThreadSynchronizationContext ThreadSynchronizationContext => ThreadSynchronizationContext.Instance;
 
+        public static FixedUpdate FixedUpdateHigh;
+        public static FixedUpdate FixedUpdateLow;
+
         public static TimeInfo TimeInfo => TimeInfo.Instance;
         
         public static EventSystem EventSystem => EventSystem.Instance;
@@ -39,7 +42,13 @@ namespace ET
             TimeInfo.Update();
             EventSystem.Update();
         }
-        
+
+        public static void FixedUpdate()
+        {
+            FixedUpdateHigh.Tick();
+            FixedUpdateLow.Tick();
+        }
+
         public static void LateUpdate()
         {
             EventSystem.LateUpdate();

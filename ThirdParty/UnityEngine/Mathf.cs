@@ -5,7 +5,13 @@ namespace UnityEngine
     public static class Mathf
     {
         public const float Epsilon = 0.00001F;
-        
+
+        public const float PI = 3.14159274F;
+
+        public const float ConstRad2Deg = 57.29578F;
+
+        public const float ConstDeg2Rad = 0.0174532924F;
+
         /// <summary>
         ///   <para>Returns the sine of angle f.</para>
         /// </summary>
@@ -570,6 +576,7 @@ namespace UnityEngine
             return (long) BitConverter.ToUInt64(buffer, 0) & long.MaxValue;
         }
         
+        // UnityEngine的直接返回常量
         public static float Rad2Deg(float radians)
         {
             return (float)(radians * 180 / System.Math.PI);

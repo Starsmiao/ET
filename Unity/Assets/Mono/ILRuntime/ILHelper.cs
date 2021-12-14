@@ -54,8 +54,7 @@ namespace ET
             appdomain.DelegateManager.RegisterMethodDelegate<long, IPEndPoint>();
             appdomain.DelegateManager.RegisterMethodDelegate<ILTypeInstance>();
             appdomain.DelegateManager.RegisterMethodDelegate<AsyncOperation>();
-            
-            
+
             appdomain.DelegateManager.RegisterFunctionDelegate<UnityEngine.Events.UnityAction>();
             appdomain.DelegateManager.RegisterFunctionDelegate<System.Object, ET.ETTask>();
             appdomain.DelegateManager.RegisterFunctionDelegate<ILTypeInstance, bool>();
@@ -68,7 +67,8 @@ namespace ET
             appdomain.DelegateManager.RegisterFunctionDelegate<int, int, int>();//Linq
             appdomain.DelegateManager.RegisterFunctionDelegate<KeyValuePair<int, List<int>>, bool>();
             appdomain.DelegateManager.RegisterFunctionDelegate<KeyValuePair<int, int>, KeyValuePair<int, int>, int>();
-            
+            appdomain.DelegateManager.RegisterFunctionDelegate<System.Single, System.Int32, System.Single>(); // 为FixedUpdate注册的委托
+
             appdomain.DelegateManager.RegisterDelegateConvertor<UnityEngine.Events.UnityAction>((act) =>
             {
                 return new UnityEngine.Events.UnityAction(() =>
@@ -109,6 +109,10 @@ namespace ET
         {
             //注册自己写的适配器
             appdomain.RegisterCrossBindingAdaptor(new IAsyncStateMachineClassInheritanceAdaptor());
+
+            // 为Box2D接口注册的适配器
+            appdomain.RegisterCrossBindingAdaptor(new IContactListenerAdapter());
+            appdomain.RegisterCrossBindingAdaptor(new IRayCastCallbackAdapter());
         }
     }
 }

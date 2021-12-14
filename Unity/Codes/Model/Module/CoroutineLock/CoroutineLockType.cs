@@ -11,6 +11,11 @@ namespace ET
         public const int Resources = 6;
         public const int ResourcesLoader = 7;
 
+        // 自定义
+        public const int AccountName = 8;               // Realm上验证账号时使用
+        public const int AccountId = 9;                 // Gate上登陆账号时使用
+        public const int SessionLock = 10;               // 心跳和顶号执行下线逻辑时用
+
         public const int Max = 100; // 这个必须最大
     }
 }

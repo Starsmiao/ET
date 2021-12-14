@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>7.3</LangVersion>
+    <LangVersion>Latest</LangVersion>
     <_TargetFrameworkDirectories>non_empty_path_generated_by_unity.rider.package</_TargetFrameworkDirectories>
     <_FullFrameworkReferenceAssemblyPaths>non_empty_path_generated_by_unity.rider.package</_FullFrameworkReferenceAssemblyPaths>
     <DisableHandlePackageFileConflicts>true</DisableHandlePackageFileConflicts>
@@ -49,7 +49,105 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Codes\HotfixView\**\*.cs" />
+    <Compile Include="Codes\HotfixView\AppStart_Init.cs" />
+    <Compile Include="Codes\HotfixView\Module\UI\UIComponentSystem.cs" />
+    <Compile Include="Codes\HotfixView\Module\UI\UIEventComponentSystem.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Config\ConfigComponent_SetConfigLoader_Awake.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Config\ConfigLoader.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Event\ActiveBulletView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Event\AfterCreateZoneScene_AddComponent.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Event\CreateBulletView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Event\CreateUnitView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Event\EnterMapView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Event\InitBulletView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Event\ReadcolliderDataClient.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Event\SniperRifleBulletActiveView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Event\UpdateBulletPosition.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Event\UpdateBulletRotation.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Event\UpdateUnitPosition.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Event\UpdateUnitRotation.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Event\UpdateWeaponConfigView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Factory\ExplosionFactory.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_AimView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_BeginReloadBulletView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_BeginSwitchWeaponView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_CharacterFlipView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_ClimbView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_CompleteReloadBulletView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_CompleteSwitchWeapon.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_CrawlView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_DescendView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_DriveView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_FallView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_FightView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_HangView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_JumpDownView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_JumpView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_LieView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_MoveView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_RollBackView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_RollFrontView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_RunView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_ShootView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_SoakView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_SquatView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_SquatWalkView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_StandView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_StopMoveView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_StopShootView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_SwimView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\Event\M2C_WalkView.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\System\AimLerpSystem.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\System\MoveLerpSystem.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\System\ShootLerpSystem.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\Fight\System\UserInputComponentSystem.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\System\AnimatorComponentSystem.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\System\GlobalComponentSystem.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\System\SceneChangeComponentSystem.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIAnnouncement\CreateUIAnnouncement.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIAnnouncement\RemoveUIAnnouncement.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIAnnouncement\UIAnnouncementComponentSystem.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIAnnouncement\UIAnnouncementEvent.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIDialog\CreateUIDialogEvent.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIDialog\RemoveUIDialog.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIDialog\UIDialogComponentSystem.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIDialog\UIDialogEvent.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIFightButtonGroup\CreateUIFightButtonGroup.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIFightButtonGroup\RemoveUIFightButtonGroup.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIFightButtonGroup\UIFightButtonGroupComponentSystem.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIFightButtonGroup\UIFightButtonGroupEvent.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIHelper.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIHotfix\CreateUIHotfix.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIHotfix\RemoveUIHotfix.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIHotfix\UIHotfixComponentSystem.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIHotfix\UIHotfixeEvent.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIHPMPSP\CreateUIHPMPSP.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIHPMPSP\RemoveUIHPMPSP.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIHPMPSP\UIHPMPSPComponentSystem.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIHPMPSP\UIHPMPSPEvent.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIJoystick\AimJoystickCoolTime.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIJoystick\CreateUIJoystick.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIJoystick\RemoveUIJoystick.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIJoystick\UIJoystickComponentSystem.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIJoystick\UIJoystickEvent.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UILobby\CreateUILobby.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UILobby\RemoveUILobby.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UILobby\UILobbyComponentSystem.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UILobby\UILobbyEvent.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UILogin\CreateUILogin.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UILogin\RemoveUILogin.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UILogin\UILoginComponentSystem.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UILogin\UILoginEvent.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIRoom\CreateUIRoom.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIRoom\RemoveUIRoom.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIRoom\UIRoomAddPlayer.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIRoom\UIRoomComponentSystem.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIRoom\UIRoomEvent.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIRoom\UIRoomSetPlayerReady.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIWeapon\CreateUIWeapon.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIWeapon\RemoveUIWeapon.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIWeapon\UIWeaponComponentSystem.cs" />
+    <Compile Include="Codes\HotfixView\Starsmiao\UI\UIWeapon\UIWeaponEvent.cs" />
     <Reference Include="UnityEngine">
       <HintPath>./Temp/bin/Debug/UnityEngine.dll</HintPath>
     </Reference>
@@ -605,10 +703,18 @@
       <Project>{5910fa29-5797-199c-985b-fc9fc473328e}</Project>
       <Name>Unity.Mono</Name>
     </ProjectReference>
+    <!--My My My!-->
+    <Reference Include="MongoDB.Bson">
+      <HintPath>Assets\Plugins\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
     <ProjectReference Include="Unity.ThirdParty.csproj">
       <Project>{d2ad5be1-263a-9a30-ab0f-dc5b08044350}</Project>
       <Name>Unity.ThirdParty</Name>
     </ProjectReference>
+    <!--My My My!-->
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

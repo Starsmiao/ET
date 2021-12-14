@@ -71,16 +71,22 @@ namespace ET
 	{
 		[ProtoMember(1)]
 		public int Id { get; set; }
-		[ProtoMember(3)]
+		[ProtoMember(2)]
 		public string Name { get; set; }
+		[ProtoMember(3)]
+		public string Mingzi { get; set; }
 		[ProtoMember(4)]
-		public string Desc { get; set; }
+		public string Description { get; set; }
 		[ProtoMember(5)]
-		public int Position { get; set; }
+		public string BuildSkeletonDataAssest { get; set; }
 		[ProtoMember(6)]
-		public int Height { get; set; }
+		public string FrontSkeletonDataAssest { get; set; }
 		[ProtoMember(7)]
-		public int Weight { get; set; }
+		public string BuildAnimatorController { get; set; }
+		[ProtoMember(8)]
+		public string FrontAnimatorController { get; set; }
+		[ProtoMember(9)]
+		public int Star { get; set; }
 
 	}
 }

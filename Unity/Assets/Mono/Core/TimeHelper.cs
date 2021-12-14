@@ -8,7 +8,17 @@ namespace ET
         public const long OneDay = 86400000;
         public const long Hour = 3600000;
         public const long Minute = 60000;
-        
+
+        /// <summary>
+        /// FixedUpdate增量时间, 60帧
+        /// </summary>
+        public const float FixedDeltaTimeHigh = 1 / 60f;
+
+        /// <summary>
+        /// FixedUpdate增量时间, 15帧
+        /// </summary>
+        public const float FixedDeltaTimeLow = 1 / 15f;
+
         /// <summary>
         /// 客户端时间
         /// </summary>

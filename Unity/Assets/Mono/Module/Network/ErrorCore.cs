@@ -57,6 +57,14 @@
 
         public const int ERR_Cancel = 200001;
 
+        // 自定义
+        public const int ERR_AccountOrPasswordError = 200102; // 用户账号密码对不上
+        public const int ERR_ActorLocationNotFound = 200103;
+        public const int ERR_SignError = 201000; // 登录Gate验证失败
+        public const int ERR_Disconnect = 210000;
+        public const int ERR_AccountAlreadyRegister = 210001; // 用户已存在
+        public const int ERR_JoinRoomError = 210002;
+
         public static bool IsRpcNeedThrowException(int error)
         {
             if (error == 0)

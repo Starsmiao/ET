@@ -489,5 +489,67 @@ namespace UnityEngine
             vector2.y = value1.y * num;
             return vector2;
         }
+
+        // 以下为自定义
+        public static Vector2 down
+        {
+            get
+            {
+                return new Vector2(0, -1);
+            }
+        }
+        public static Vector2 left
+        {
+            get
+            {
+                return new Vector2(-1, 0);
+            }
+        }
+
+        public static Vector2 right
+        {
+            get
+            {
+                return new Vector2(1, 0);
+            }
+        }
+        public static Vector2 up
+        {
+            get
+            {
+                return new Vector2(0, 1);
+            }
+        }
+
+        /// <summary>
+        /// 根据法线向量求正交向量
+        /// </summary>
+        /// <param name="vector2"></param>
+        /// <returns></returns>
+        public static Vector2 Perpendicular(Vector2 vector2)
+        {
+            return new Vector2(-vector2.y, vector2.x);
+        }
+
+        /// <summary>
+        /// 角度
+        /// </summary>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
+        /// <returns></returns>
+        public static float FixedAngle(Vector2 from, Vector2 to)
+        {
+            double cos = Vector2.Dot(from.normalized, to.normalized);
+            if (cos < -1)
+            {
+                cos = -1;
+            }
+            if (cos > 1)
+            {
+                cos = 1;
+            }
+            return (float)(Math.Acos(cos) * (180 / Math.PI));
+        }
+
     }
 }

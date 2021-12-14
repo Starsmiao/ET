@@ -15,9 +15,6 @@ namespace ET
             {
                 Log.Error(e.ExceptionObject.ToString());
             };
-            
-            ETTask.ExceptionHandler += Log.Error;
-            
             // 异步方法全部会回掉到主线程
             SynchronizationContext.SetSynchronizationContext(ThreadSynchronizationContext.Instance);
 			
@@ -43,7 +40,7 @@ namespace ET
 				
                 Log.Info($"server start........................ {Game.Scene.Id}");
 
-                Game.EventSystem.Publish(new EventType.AppStart()).Coroutine();
+                Game.EventSystem.Publish(new EventType.AppStart());
 				
                 while (true)
                 {

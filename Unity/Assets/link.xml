@@ -1,6 +1,30 @@
 <linker>
     <assembly fullname="Unity.Mono" preserve="all"/>
     <assembly fullname="Unity.ThirdParty" preserve="all"/>
-    <assembly fullname="UnityEngine" preserve="all"/>
-  <assembly fullname="System" preserve="all"/>
+    <assembly fullname="System" preserve="all"/>
+    <assembly fullname="MongoDB.Bson" preserve="all"/>
+    <assembly fullname="Cinemachine" preserve="all"/>
+
+    <assembly fullname="UnityEngine">
+        <namespace fullname="UnityEngine.U2D" preserve="all"/>
+        <type fullname="UnityEngine.Transform" preserve="all"/>
+        <type fullname="UnityEngine.Rigidbody2D" preserve="all"/>
+        <type fullname="UnityEngine.BoxCollider2D" preserve="all"/>
+        <type fullname="UnityEngine.CapsuleCollider2D" preserve="all"/>
+        <type fullname="UnityEngine.CompositeCollider2D" preserve="all"/>
+        <type fullname="UnityEngine.PolygonCollider2D" preserve="all"/>
+        <type fullname="UnityEngine.CircleCollider2D" preserve="all"/>
+        <type fullname="UnityEngine.EdgeCollider2D" preserve="all"/>
+        <type fullname="UnityEngine.Animations" preserve="all"/>
+        <type fullname="UnityEngine.Animator" preserve="all"/>
+        <type fullname="UnityEngine.AnimatorController" preserve="all"/>
+        <type fullname="UnityEngine.ParticleSystem" preserve="all"/>
+        <type fullname="UnityEngine.ParticleSystemRenderer" preserve="all"/>
+        <type fullname="UnityEngine.Rendering.Universal" preserve="all"/>
+        <type fullname="UnityEngine.SpriteShapeRenderer" preserve="all"/>
+        <type fullname="UnityEngine.Rendering.SortingGroup" preserve="all"/>
+        <type fullname="UnityEngine.TrailRenderer" preserve="all"/>
+        <type fullname="UnityEngine.SpriteRenderer" preserve="all"/>
+        <type fullname="UnityEngine.Timeline" preserve="all"/>
+    </assembly>
 </linker>

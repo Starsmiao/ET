@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>7.3</LangVersion>
+    <LangVersion>Latest</LangVersion>
     <_TargetFrameworkDirectories>non_empty_path_generated_by_unity.rider.package</_TargetFrameworkDirectories>
     <_FullFrameworkReferenceAssemblyPaths>non_empty_path_generated_by_unity.rider.package</_FullFrameworkReferenceAssemblyPaths>
     <DisableHandlePackageFileConflicts>true</DisableHandlePackageFileConflicts>
@@ -49,7 +49,37 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Codes\ModelView\**\*.cs" />
+    <Compile Include="Codes\ModelView\Module\UI\AUIEvent.cs" />
+    <Compile Include="Codes\ModelView\Module\UI\LayerNames.cs" />
+    <Compile Include="Codes\ModelView\Module\UI\UI.cs" />
+    <Compile Include="Codes\ModelView\Module\UI\UIComponent.cs" />
+    <Compile Include="Codes\ModelView\Module\UI\UIEventAttribute.cs" />
+    <Compile Include="Codes\ModelView\Module\UI\UIEventComponent.cs" />
+    <Compile Include="Codes\ModelView\Module\UI\UIType.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\Component\AnimatorComponent.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\Component\AudioComponent.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\Component\CameraComponent.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\Component\GameObjectComponent.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\Component\GlobalComponent.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\Component\SceneChangeComponent.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\Entry.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\Fight\Component\AimLerpComponent.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\Fight\Component\MoveLerpComponent.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\Fight\Component\ShootLerpComponent.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\Resource\BundleDownloaderComponent.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\Resource\ResourcesComponent.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\Resource\ResourcesLoaderComponent.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\Resource\XAssetComponent.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\UI\Component\UIAnnouncementComponent.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\UI\Component\UIDialogComponent.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\UI\Component\UIFightButtonGroupComponent.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\UI\Component\UIHotfixComponent.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\UI\Component\UIHPMPSPComponent.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\UI\Component\UIJoystickComponent.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\UI\Component\UILobbyComponent.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\UI\Component\UILoginComponent.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\UI\Component\UIRoomComponent.cs" />
+    <Compile Include="Codes\ModelView\Starsmiao\UI\Component\UIWeaponComponent.cs" />
     <Reference Include="UnityEngine">
       <HintPath>./Temp/bin/Debug/UnityEngine.dll</HintPath>
     </Reference>
@@ -594,10 +624,18 @@
       <Project>{5910fa29-5797-199c-985b-fc9fc473328e}</Project>
       <Name>Unity.Mono</Name>
     </ProjectReference>
+    <!--My My My!-->
+    <Reference Include="MongoDB.Bson">
+      <HintPath>Assets\Plugins\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
     <ProjectReference Include="Unity.ThirdParty.csproj">
       <Project>{d2ad5be1-263a-9a30-ab0f-dc5b08044350}</Project>
       <Name>Unity.ThirdParty</Name>
     </ProjectReference>
+    <!--My My My!-->
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

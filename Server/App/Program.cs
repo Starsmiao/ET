@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Diagnostics;
+using System.IO;
 using System.Threading;
 using CommandLine;
+using MongoDB.Bson;
 using NLog;
 
 namespace ET
@@ -13,8 +16,6 @@ namespace ET
 			{
 				Log.Error(e.ExceptionObject.ToString());
 			};
-			
-			ETTask.ExceptionHandler += Log.Error;
 
 			// 异步方法全部会回掉到主线程
 			SynchronizationContext.SetSynchronizationContext(ThreadSynchronizationContext.Instance);
@@ -40,6 +41,10 @@ namespace ET
 				
 				Log.Info($"server start........................ {Game.Scene.Id}");
 
+				//用于FixedUpdate, 要在Game.EventSystem.Add()之后new
+				FixedUpdate fixedUpdateHigh = new FixedUpdate(60) { UpdateCallback = () => Game.EventSystem.FixedUpdateHigh() };
+				FixedUpdate fixedUpdateLow = new FixedUpdate(15) { UpdateCallback = () => Game.EventSystem.FixedUpdateLow() };
+
 				Game.EventSystem.Publish(new EventType.AppStart()).Coroutine();
 				
 				while (true)
@@ -48,6 +53,8 @@ namespace ET
 					{
 						Thread.Sleep(1);
 						Game.Update();
+						fixedUpdateHigh.Tick();
+						fixedUpdateLow.Tick();
 						Game.LateUpdate();
 						Game.FrameFinish();
 					}
