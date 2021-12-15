@@ -42,7 +42,7 @@ namespace ET
             // 加载配置
             Game.Scene.AddComponent<XAssetComponent>();
             Game.Scene.AddComponent<ConfigComponent>();
-            await ConfigComponent.Instance.LoadAsync();
+            ConfigComponent.Instance.Load();
             XAssetComponent.Instance.UnLoadAssetBundle(ABPathUtilities.GetConfigPath("Config"));
 
             await Game.EventSystem.Publish(new EventType.AppStartInitFinish() { ZoneScene = zoneScene });
